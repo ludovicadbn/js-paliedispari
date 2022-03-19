@@ -1,14 +1,3 @@
-// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-// Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-// Sommiamo i due numeri
-// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-// Dichiariamo chi ha vinto.
-
-const userDecision = [
-  "pari",
-  "dispari"
-]
-
 let userEvenOdd = prompt("Scegli tra pari e dispari")
 let userNum = parseInt(prompt("Inserisci un numero da 1 a 5"))
 
@@ -17,12 +6,15 @@ while (userNum > 5) {
   userNum = parseInt(prompt("Inserisci un numero da 1 a 5"))
 }
 
-function userPrompt(){
-  for(let i = 0; i < userDecision.length; i++){
-    if (userEvenOdd == userDecision[i]){
-      return userDecision[i];
-    }
+function userPrompt() {
+  let prompt = ""
+  if (userEvenOdd == "pari") {
+    prompt += "pari";
+  } else {
+    prompt += "dispari"
   }
+
+  return prompt;
 }
 
 function randomNum(){
@@ -31,14 +23,15 @@ function randomNum(){
 }
 
 const sum = userNum + randomNum()
+let sumResult = ""
 
 function evenOdd(){
   if (sum % 2 == 0){
-    sum = userDecision[0];
+    sumResult += "pari";
   } else {
-    sum = userDecision[1];
+    sumResult += "dispari";
   }
-  return sum;
+  return sumResult;
 }
 
 let result = "";
