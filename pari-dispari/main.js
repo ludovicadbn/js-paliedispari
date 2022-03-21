@@ -23,9 +23,9 @@ function randomNum(){
 }
 
 const sum = userNum + randomNum()
-let sumResult = ""
 
 function evenOdd(){
+  let sumResult = ""
   if (sum % 2 == 0){
     sumResult += "pari";
   } else {
@@ -34,9 +34,8 @@ function evenOdd(){
   return sumResult;
 }
 
-let result = "";
-
 if (evenOdd() == userPrompt()) {
+  let result = "";
   result += "Hai vinto";
 } else {
   result += "Ha vinto il computer";
